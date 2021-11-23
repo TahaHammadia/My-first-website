@@ -18,7 +18,7 @@ def get_access():
         login = driver.find_element_by_name("Login")
         return False
 
-file = open("C:/Users/hp 650 G3/Desktop/Internet/Hacking/wordlists/common.txt")
+file = open("Internet/Hacking/wordlists/common.txt")
 passes = file.readlines()
 file.close()
 
