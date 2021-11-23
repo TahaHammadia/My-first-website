@@ -1,0 +1,71 @@
+body {
+	background-color: #FDEEEA;
+}
+h1 {
+	color: #7A1B00;
+	font-family: "Times New Roman", sans-serif;
+	text-align: center;
+}
+p {
+	font-family: Arial, serif;
+}
+a {
+	font-weight: bold;
+	color: #045915;
+	text-decoration: none;
+}
+#link {
+	text-align: right;
+	padding: 0px 40px;
+}
+section {
+	font-size: 1.125em;
+	line-height: 60px;
+}
+span.action {
+	padding: 10px;
+	display: inline-block;
+}
+li.game {
+	display: inline-block;
+	padding: 0px 20px;
+	text-decoration: underline;
+	font-weight: bold;
+}
+button {
+	background-color: #FFFFFF;
+	color: #A80A0A;
+	font-weight: bold;
+	font-size: 1.25em;
+	border: 5px solid #ECA2A2;
+	border-radius: 10px;
+	display: inline-block;
+}
+button:hover {
+	background-color: #ECA2A2;
+}
+.helpList {
+	font-size: 1.125rem;
+}
+#win {
+	background-color: #FAF8D1;
+	color: #A48611;
+	font-weight: bold;
+	font-size: 4em;
+	text-align: center;
+	line-height: 200px;
+	display: none;
+}
+#lose {
+	background-color: #547CD4;
+	color: #041E57;
+	font-weight: bold;
+	font-size: 4em;
+	text-align: center;
+	line-height: 200px;
+	display: none;
+}
+.resButton {
+	text-align: center;
+	font-size: 1.25rem;
+}

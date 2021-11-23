@@ -1,0 +1,16 @@
+<body>
+	<form action="#">
+		<label>Choose your waiting time in seconds</label>
+		<input type="text" id="this">
+		<button onclick="but()">Click me !</button>
+	</form>
+</body>
+<script>
+let inp = document.getElementById("this");
+async function sleep(delay){
+	return new Promise((resolve, reject) => {setTimeout(() => {resolve("OK, it works")}, delay * 1000)});  //setTimeout works in ms
+}
+const but = () => {
+	sleep(parseInt(inp.value)).then(alert);
+}
+</script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link href="logo.png" type="image/x-icon" rel="shortcut icon">
+		<link href="style.css" rel="stylesheet">
+		<title>HELP Covid-19 Political Game</title>
+	</head>
+	<body>
+		<h1>The Covid-19 Political Game</h1>
+		<p id='link'><a href="game.html" style="cursor: pointer">Game</a></p>
+		<p style="font-family: 'Lucida Handwriting', Arial, serif">Ruler, save your people <em>(or your power)</em> from Covid-19 !!</p>
+		<hr>
+		<h2>Rules of the game</h2>
+		<p>In this game, you are the ruler of an instable country. In order to maintain your power, you must keep your popularity high enough. At the beginning of the game,
+		you are doing pretty well. Sadly for you, the Covid-19 pandemic hits your country. And as it is written in history books, great troubles bring with them political changes.
+		In order to keep your position <em>(and your head)</em>, you must manage the coming period wisely during one year (52 weeks). Pay attention to two things :</p>
+		<ul class="helpList">
+			<li>keeping the pandemic under control (the people fears death and illness)</li>
+			<li>avoiding imposing too strict laws (the people hates laws, even if it saves its life)</li>
+		</ul>
+		<p>Seems complicated ? Just remember that if your popularity is less than 20 % for two weeks, your country will go into revolution. <br>For the first version, there is
+		no saving of the session <em>(as long as I haven't learnt PHP and got a server)</em>.</p>
+		<h2>Use stats</h2>
+		<p>The game gives you a lot of stats in order to make good choices :</p>
+		<ol class="helpList">
+			<li>Week n: gives you the number of the week</li>
+			<li>R0: tells you the value of the famous R0 parameter</li>
+			<li>Week's cases: tells you how many people have been infected the last week</li>
+			<li>Week's death: tells you how many people have died the last week</li>
+			<li>Total cases: tells you the number of infections from the beginning of the game</li>
+			<li>Total death: tells you the number of people who have died since the beginning of the game</li>
+			<li>POPULARITY: THE MOST IMPORTANT VALUE, TELLS YOU HOW MUCH YOU ARE POPULAR</li>
+		</ol>
+		<h2>Choose your actions</h2>
+		<p>In this first version, the actions have two effects. The first one is to decrease the value of R.
+		The second is to decrease popularity. The game offers you the possibility to choose your actions among 10 :</p>
+		<ul class="helpList">
+			<li>Publicity on Covid-19 : R decreases by 0.05 and the popularity decreases by 0.1% each week</li>
+			<li>Public Speeches : R decreases by 0.1 and the popularity decreases by 0.3% each week</li>
+			<li>Foreign travel restrictions : R decreases by 0.25 and the popularity decreases by 0.5% each week</li>
+			<li>Curfex : R decreases by 0.55 and the popularity decreases by 1.1% each week</li>
+			<li>Locking 1 : R decreases by 0.85 and the popularity decreases by 1.7% each week</li>
+			<li>Locking 2 : R decreases by 1.1 and the popularity decreases by 2.3% each week</li>
+			<li>Mandatory Mask : R decreases by 0.6 and the popularity decreases by 1.3% each week</li>
+			<li>Internal travel restrictions : R decreases by 0.4 and the popularity decreases by 0.9% each week</li>
+			<li>Quarantine centers : R decreases by 1.3 and the popularity decreases by 3% each week</li>
+			<li>Kill the old sick : R decreases by 2.5 and the popularity decreases by 10% each week</li>
+		</ul>
+		<p>Moreover, there are other special variations of popularity :</p>
+		<ul class="helpList">
+			<li>If the number of the week's cases is greater than 10 000, the popularity decreases by 5%</li>
+			<li>If the number of the deaths by Covid-19 in a week is greater than 500, the popularity decreases by 5%</li>
+			<li>If R is less than 1.5, the popularity increases by 10%</li>
+			<li>If the number of the deaths by Covid-19 in a week decreases to less than 50 after having been greater than 500, the popularity increases by 7.5%</li>
+		</ul>
+		<p>For this first version, the chosen values are more or less guesses. I hope that for the next versions the values will be more 
+		representitive of the reality.</p>
+		<br>
+	</body>
+</html>

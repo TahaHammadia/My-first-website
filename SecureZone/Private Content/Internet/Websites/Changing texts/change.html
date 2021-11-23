@@ -1,0 +1,117 @@
+<!doctype html>
+
+<html lang='en'>
+	<head>
+		<title>Change Your Texts</title>
+		<meta charset='utf-8'>
+		<link href='writing.jpg' type='image/x-icon' rel='shortcut icon'>
+	</head>
+	<body>
+	<img src='writing.jpg' alt='Logo' title='Logo' width=256 height=192>
+		<h1>Changing texts</h1>
+		<h3>Change your text, fellow !</h3>
+		<p id='explain'>This HTML page helps you changing texts. You just have to copy the text in the prompt when asked. Then, submit the change you want to make. At last,
+		tell the window the occurences you wanna change.</p>
+		<section>
+		<h2>A piece of advice</h3>
+		<ul>
+			<li>If you want to make sure that the words containing the word you want change are not changed, add a space in each side.</li>
+			<li>If you have a long text and you want to change it, use Ctrl + A.</li>
+			<li>After making the changes you wanted to do, copy the result.</li>
+		</ul>
+		</section>
+			<button onclick="submitText()">Submit my text</button>
+		<button onclick="saveChange()">Submit change</button>
+		<button onclick="savePosition()">Which occurences ?</button>
+		<button onclick="result()">Show result</button>
+		<hr>
+		<p id='txt'></p>
+		<style>
+		body {
+		background-color : #78C9CC;
+		}
+		h1 {
+		text-align : center;
+		color : #F50707;
+		font-weight: bold;
+		font-size : 2.5em;
+		font-family : 'Times New Roman';
+		}
+		h3 {
+		color : #043B04;
+		font-size : 1.75em;
+		font-family : 'Times New Roman';
+		}
+		#explain {
+		font-style : italic;
+		font-size : 1.1em;
+		}
+		#txt {
+		font-size : 1.25em;
+		background-color : #BCF2F4;
+		font-family : serif;
+		font-weight : bold;
+		word-spacing : 0.75em;
+		line-height : 2.5em;
+		}
+		section {
+		background-color : #E5BB0A;
+		}
+		h2 {
+		color : #FB0202;
+		font-family : 'Times New Roman';
+		font-size : 1.65em;
+		}
+		ul {
+		font-size : 1.2em;
+		}
+		</style>
+		<script>
+			var original, toChange, change, pos, textToShow;
+			function submitText() {
+				original = prompt("Submit your text here");
+				original.trim();
+				document.getElementById('txt').innerHTML = original;
+			}
+			function saveChange() {
+				toChange = prompt("Submit what you wanna change");
+				change = prompt("Submit by what you wanna change it");
+			}
+			function savePosition() {
+				var occ = prompt("Which occurences do you wanna change ?\n" +
+				"If all, write : all");
+				if(occ.toLowerCase().trim() == 'all') {
+				pos = [];
+				}
+				else {
+					pos = occ.split(' ');
+				}
+			}
+			function addModifiedText(idx) {
+				if(pos.indexOf(idx) >= 0) {    // in order to work in older versions
+					textToShow = textToShow + change;
+				}
+				else {
+					textToShow = textToShow + toChange;
+				}
+			}
+			function result() {
+				var splitedText = original.split(toChange);
+				if(pos.length == 0) {     // You cannot compare arrays in JS since they are objects.
+				textToShow = splitedText.join(change);
+				}
+				else {
+					var idx = 1;   //the type conversion is extreme in JS
+					textToShow = '';
+					for(let i = 0; i < splitedText.length - 1; i++) {
+						textToShow = textToShow + splitedText[i];    
+						addModifiedText(idx);
+						idx ++;
+					}
+					textToShow = textToShow + splitedText[splitedText.length - 1];
+				}
+				document.getElementById('txt').innerHTML = textToShow;
+			}
+		</script>
+	</body>
+</html>

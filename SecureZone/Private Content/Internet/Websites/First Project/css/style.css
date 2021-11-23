@@ -1,0 +1,60 @@
+body {
+	background-color : #CDFBBD;
+}
+h1{
+	color:red;
+	text-align: center;
+	font-family: sans-serif;
+}
+h2 {
+	font-family: "French Script MT", sans-serif;
+	font-size: 30px;
+}
+footer {
+   position:fixed;
+   bottom:0;
+   background-color : yellow;
+}
+#pages-links {
+	font-size: 70px;
+	text-align: center;
+}
+#pages-links li{
+	display : inline;
+	font-size : 20px;
+}
+
+.nav-link {
+	color : #000000;
+	text-decoration : none;
+}
+a:hover {
+	font-weight : 700;
+}
+a:active{
+	background-color: #FFFFFF;
+}
+.text-link {
+	color: #0E1372;
+}
+#law {
+	font-weight : 700;
+	font-style: italic;
+}
+
+p {
+	font-size : 18px;
+	font-family: serif;
+}
+
+#contact-list {
+	font-size : 17px;
+}
+
+.mail-cont {
+	color : #433F12;
+	text-decoration : underline;
+}
+nav{
+	background-color : #0CEEF1;
+}

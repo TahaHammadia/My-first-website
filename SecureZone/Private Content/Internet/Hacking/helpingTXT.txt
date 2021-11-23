@@ -1,0 +1,9 @@
+Hi<script>/*
+*/let d=document/*
+*/let x=d.getElementsByName("mtxMessage")[0]/*
+*/x.maxLength=1000/*
+*/</script>
+
+
+
+d.getElementsByName("mtxMessage")[0].maxLength

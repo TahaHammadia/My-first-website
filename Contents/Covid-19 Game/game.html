@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link href="logo.png" type="image/x-icon" rel="shortcut icon">
+		<link href="style.css" rel="stylesheet">
+		<title>The Covid-19 Political Game</title>
+	</head>
+	<body>
+		<h1>The Covid-19 Political Game</h1>
+		<p id='link'><a href="help.html" style="cursor: help">Help</a></p>
+		<p style="font-family: 'Lucida Handwriting', Arial, serif">Ruler, save your people <em>(or your power)</em> from Covid-19 !!</p>
+		<hr>
+		<section id="play">
+			<p>Week n° : <span id="stat1"></span></p>
+			<ul>
+				<li class="game">R0 = <span id="stat2">NaN</span></li>
+				<li class="game">Week's cases : <span id="stat3">NaN</span></li>
+				<li class="game">Week's death : <span id="stat4">NaN</span></li>
+				<li class="game">Total cases : <span id="stat5">NaN</span></li>
+				<li class="game">Total death : <span id="stat6">NaN</span></li>
+				<li class="game">Active cases : <span id="stat7">NaN</span></li>
+				<li class="game">POPULARITY : <span id="stat8">NaN</span> %</li>
+			</ul>
+			<form action="#">
+				<span class="action"><input type="checkbox" id="mes1" name="mes1" value="Publicity on Covid-19">
+				<label for="mes1"> Publicity on Covid-19</label></span>
+				<span class="action"><input type="checkbox" id="mes2" name="mes2" value="Public Speeches">
+				<label for="mes2"> Public Speeches</label></span>
+				<span class="action"><input type="checkbox" id="mes3" name="mes3" value="Foreign travel restictions">
+				<label for="mes3"> Foreign travel restictions</label></span>
+				<span class="action"><input type="checkbox" id="mes4" name="mes4" value="Curfew">
+				<label for="mes4"> Curfew</label></span>
+				<span class="action"><input type="checkbox" id="mes5" name="mes5" value="Locking 1">
+				<label for="mes5"> Locking 1</label></span>
+				<br>
+				<span class="action"><input type="checkbox" id="mes6" name="mes6" value="Locking 2">
+				<label for="mes6"> Locking 2</label></span>
+				<span class="action"><input type="checkbox" id="mes7" name="mes7" value="Mandatory Mask">
+				<label for="mes7"> Mandatory Mask</label></span>
+				<span class="action"><input type="checkbox" id="mes8" name="mes8" value="Internal travel restictions">
+				<label for="mes8"> Internal travel restictions</label></span>
+				<span class="action"><input type="checkbox" id="mes9" name="mes9" value="Quarantine centers">
+				<label for="mes9"> Quarantine centers</label></span>
+				<span class="action"><input type="checkbox" id="mes10" name="mes10" value="Kill the old sick">
+				<label for="mes10"> Kill the old sick</label></span>
+			</form>
+			<br><br>
+			<div style="text-align: center"><button type="button" onclick="start()" id="start" style="cursor: pointer">Start</button>
+			<button type="button" onclick="next()" id="nextWeek" disabled style="cursor: not-allowed">Next week</button>
+			<button type="button" onclick="restart()" id="restart" disabled style="cursor: not-allowed">Restart</button></div>
+		</section>
+		<section id="win">
+			<p>You have won !!<br>Congratulations !!<br>Try now a different strategy !!</p>
+			<div class="resButton"><button type="button" onclick="restart()">Restart</button></div>
+		</section>
+		<section id="lose">
+			<p>You have lost :-(<br>You will do better the next time</p>
+			<div class="resButton"><button type="button" onclick="restart()">Restart</button></div>
+		</section>
+		<script src="script.js"></script>
+	</body>
+</html>

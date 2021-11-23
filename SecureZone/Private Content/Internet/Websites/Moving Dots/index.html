@@ -1,0 +1,17 @@
+<body>
+<figure>
+<img src="3.png" id="loadingImg" alt="Not Found">
+<button onclick="act()">Click me !</button>
+</figure>
+<script>
+	let imag = document.getElementById("loadingImg");
+	async function act() {
+		while(true) {
+			for(let i = 1; i <= 3; i++) {
+				await new Promise((resolve, reject) => {setTimeout(() => {resolve()}, 1000)});
+				imag.src = i + ".png";
+			}
+		}
+	}
+</script>
+</body>

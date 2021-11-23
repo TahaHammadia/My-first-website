@@ -1,0 +1,1 @@
+Pour sécuriser contre ping et arping, il suffit de désactiver l'option de répondre et d'envoyer des requêtres ARP. Ensuite, on complète les tableaux ARP de chaque machine avec les entrées des machines autorisées. On restreint la communication aux machines autorisées ; ce qui permet d'éviter les intrusions

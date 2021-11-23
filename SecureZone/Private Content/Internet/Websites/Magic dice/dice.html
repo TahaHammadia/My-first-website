@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+	<head>
+		<title>e-dice</title>
+		<meta charset='utf-8'>
+		<link href='images/logo.jpg' type='image/x-icon' rel='shortcut icon'>
+	</head>
+	<body>
+		<h1>My e-dice</h1>
+		<p id='expl'>This HTML page gives you the possibility to use a true e-dice</p>
+		<hr>
+		<section>
+		<button type='button' onclick='roll_dice()' id='roll'>Roll the e-dice</button>
+		<button type='button' onclick='display_res()'>Show results</button>   <!-- The string is interpreted as JavaScript text -->
+		<button type='button' onclick='restart()'>Restart</button>
+		<button type="button" onclick="document.getElementById('mulOption').style.display = 'initial'">Multiple rolling</button>
+		<span id='mulOption'><input type='text' name="nbr" id="nbr" size=5 maxlength=7>
+		<button type="button" onclick="submit()">Submit value</button></span>
+		<figure>
+			<img src='images/Dice Question.png' alt='A dice face with a question mark' title = 'e-dice' id='dice'>
+		</figure>
+		<hr>
+		<article id='resultSection'>
+			<p id='msg'></p>
+			<table id='table'>
+				<tr>
+					<th id='head_0'></th>
+					<th id='head_1'></th>
+					<th id='head_2'></th>
+					<th id='head_3'></th>
+					<th id='head_4'></th>
+					<th id='head_5'></th>
+					<th id='head_6'></th>
+					<th id='head_7'></th>
+				</tr>
+				<tr>
+					<td id='data_0'></td>
+					<td id='data_1'></td>
+					<td id='data_2'></td>
+					<td id='data_3'></td>
+					<td id='data_4'></td>
+					<td id='data_5'></td>
+					<td id='data_6'></td>
+					<td id='data_7'></td>
+				</tr>
+				<tr>
+					<td id='prob_0'></td>
+					<td id='prob_1'></td>
+					<td id='prob_2'></td>
+					<td id='prob_3'></td>
+					<td id='prob_4'></td>
+					<td id='prob_5'></td>
+					<td id='prob_6'></td>
+					<td id='prob_7'></td>
+				</tr>
+			</table>
+			</article>
+		</section>
+		<style>
+			body {
+			background-color : #F9D9D9;
+			font-family : Arial, serif;
+			}
+			h1 {
+			font-size : 2.5em;
+			text-align : center;
+			font-family : 'Times New Roman', sans-serif;
+			color : #380101;
+			text-decoration : double underline;
+			}
+			#expl {
+				font-size : 1.25em;
+				font-style : italic;
+			}
+			#msg {
+				font-weight : bold;
+			}
+			article {
+			background-color : #FDF8F8;
+			}
+			table, th, td {
+				border : 1px solid black;
+			}
+			th, #data_0, #prob_0 {
+				background-color : #998A8A;
+			}
+			#data_0, #prob_0 {
+				font-weight : bold;
+			}
+			button {
+			padding : 10px 10px;
+			cursor : pointer;
+			font-weight : bold;
+			margin: 7.5px;
+			background-color: #D3AEAE;
+			border: none;
+			}
+			span {
+			display: none;
+			}
+			section {
+			text-align: center;
+			}
+		</style>
+		<script>
+			var idx, res = [0, 0, 0, 0, 0, 0], sum, one = 1, mul = document.getElementById("nbr"), diceImg = document.getElementById('dice');
+			document.getElementById("table").style.display = "none";
+			function roll_dice() {
+				idx = Math.floor(Math.random() * 6) + 1;
+				res[idx - 1] ++;
+				diceImg.src = 'images/Dice ' + idx + '.png';
+			}
+			function display_res() {
+				document.getElementById("table").style.display = "initial";
+				document.getElementById('roll').onclick = '';
+				document.getElementById('msg').innerHTML = '1 / 6 = 0.1667';
+				document.getElementById('head_0').innerHTML = 'Number';
+				document.getElementById('data_0').innerHTML = 'Occurence';
+				document.getElementById('prob_0').innerHTML = 'Frequence';
+				sum = 0;
+				for(j in res) {
+					sum += res[j];
+				}
+				for(let i = 1; i <= 6; i++) {
+					document.getElementById('head_' + i).innerHTML = i;
+					document.getElementById('data_' + i).innerHTML = res[i - 1];
+					document.getElementById('prob_' + i).innerHTML = (res[i - 1] / sum).toFixed(4);
+				}
+				document.getElementById('head_7').innerHTML = 'Total';
+				document.getElementById('data_7').innerHTML = sum;
+				document.getElementById('prob_7').innerHTML = one.toFixed(4);
+			}
+			function restart() {
+			document.getElementById('mulOption').style.display = 'none';
+				for(j in res) {
+					res[j] = 0;
+					document.getElementById('head_' + j).innerHTML = '';
+					document.getElementById('data_' + j).innerHTML = '';
+					document.getElementById('prob_' + j).innerHTML = '';
+				}
+				document.getElementById('head_6').innerHTML = '';
+				document.getElementById('data_6').innerHTML = '';
+				document.getElementById('prob_6').innerHTML = '';
+				document.getElementById('head_7').innerHTML = '';
+				document.getElementById('data_7').innerHTML = '';
+				document.getElementById('prob_7').innerHTML = '';
+				document.getElementById('msg').innerHTML = '';
+				diceImg.src = 'images/Dice Question.png';
+				document.getElementById('roll').onclick = function() {roll_dice();}   //setAttribute('onclick', 'roll_dice()'); 
+				document.getElementById('table').style.display = "none";
+				// here onclick must receive a function. There is no implicit conversion to function
+			}
+			function submit() {
+				for(let k = 0; k < mul.value; k++) {
+					idx = Math.floor(Math.random() * 6) + 1;
+					res[idx - 1] ++;
+				}
+				diceImg.src = "images/Dice search.png";
+			}
+		</script>
+	</body>
+</html>
